@@ -1,0 +1,123 @@
+
+.bookcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.17s ease-in;
+    gap: 0.75rem; 
+    padding: 1rem; 
+    margin-top: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.418)
+  }
+  
+  .bookcontainer:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.486);
+  }
+
+  .librarySummary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.17s ease-in;
+    height:30%;
+    width: 30%;
+    gap: 3rem; 
+    margin-right: 1rem; 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 10.5rem;
+    border-radius: 0.75rem;
+    background-color: white
+  }
+
+
+
+  .booktitle {
+    color: #4a5568;
+    font-weight: 600; 
+    font-size: 1.125rem; 
+    text-align: left; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    width: 10rem; 
+    padding-top: 0.25rem; 
+
+  }
+  .book-img{
+    height: 180px;
+    width: 180px;
+  }
+
+  .book-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.25rem; 
+    
+  }
+
+  .book-btn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+
+    align-items: center;
+    width: 100%;
+    padding-top: 1.25rem; 
+   
+  }
+
+  .book-country {
+    color: #16a34a; 
+    font-weight: 600; 
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .book-remove-button {
+    color: #4a5568; 
+    border: 2px solid #4a5568; 
+    border-radius: 9999px;
+    font-weight: 900; 
+    font-size: 12px; 
+    width: 70%;
+    height: 2.5rem;
+    padding: 0.25rem 0.75rem; 
+    text-transform: uppercase; 
+    transition: all 0.2s ease-in; 
+  }
+  
+  .book-remove-button:hover {
+    background-color: white;
+    color: rgb(158, 10, 10); 
+    font-size: 13px; 
+  }
+
+  .book-add-library {
+    color: #4a5568; 
+    border: 2px solid #4a5568; 
+    border-radius: 9999px; 
+    font-weight: 600; 
+    width: 70%;
+    height: 2.5rem;
+    font-size: 12px; 
+    padding: 0.25rem 0.75rem;
+    text-transform: uppercase; 
+    transition: all 0.2s ease-in; 
+  }
+  
+  .book-add-library:hover {
+    background-color: #023388; 
+    color: #ffffff; 
+    font-size: 13px; 
+  }
