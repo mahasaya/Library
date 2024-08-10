@@ -6,14 +6,9 @@ import "../style/bookStyle.css";
 import "../style/OneStyles.css";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
-import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 const Library = () => {
   const { library } = useSelector((state) => state);
-  const [totalAmount, setTotalAmount] = useState(0);
-
-  useEffect(() => {
-    setTotalAmount(library.reduce((acc, curr) => acc + curr.pages, 0));
-  }, [library]);
 
   return (
     <div
@@ -47,14 +42,14 @@ const Library = () => {
               <h2>Total Books added:{library?.length}</h2>
             </p>
             <NavLink to="/">
-          <div className="relative text-2xl">
-          <Button variant="contained">
-          <ArrowBackOutlinedIcon color="white"/>
-          Go back</Button>
+              <div className="relative text-2xl">
+                <Button variant="contained">
+                  <ArrowBackOutlinedIcon color="white" />
+                  Go back
+                </Button>
+              </div>
+            </NavLink>
           </div>
-        </NavLink>
-          </div>
-
         </div>
       ) : (
         <div>

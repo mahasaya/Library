@@ -1,12 +1,12 @@
 // import React, { useEffect } from 'react'
-import "../style/bookStyle.css"
+import "../style/bookStyle.css";
 // import { useDispatch, useSelector } from "react-redux";
 // import {add,remove} from "../redux/Slices/LibrarySlice"
 // import toast from "react-hot-toast";
 // const Book = ({book}) => {
 //     const {cart} = useSelector((state)=>state);
 //     const dispatch = useDispatch();
-  
+
 //     const addToLibrary =()=>{
 //       dispatch(add(book));
 //       toast.success("Item added to Library")
@@ -15,7 +15,7 @@ import "../style/bookStyle.css"
 //     useEffect(()=>{
 //       console.log(book)
 //     },[])
-  
+
 //     const removeFromLibrary = () =>{
 //       dispatch(remove(book.id));
 //       toast.success("Item removed from Library")
@@ -60,9 +60,6 @@ import "../style/bookStyle.css"
 //             Add to Library
 //           </button>)}
 
-
-        
-      
 //       </div>
 
 //     </div>
@@ -73,69 +70,66 @@ import "../style/bookStyle.css"
 // export default Book
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import {add,remove} from "../redux/Slices/LibrarySlice"
+import { add, remove } from "../redux/Slices/LibrarySlice";
 import { useEffect } from "react";
 
-const Book = ({book}) => {
-  const {library} = useSelector((state)=>state);
+const Book = ({ book }) => {
+  const { library } = useSelector((state) => state);
   const dispatch = useDispatch();
-  useEffect(()=>{
-    console.log(library)
+  useEffect(() => {
+    console.log(library);
+  }, [library]);
 
-  },[library])
-
-  const addToCart =()=>{
+  const addToCart = () => {
     dispatch(add(book));
-    toast.success("Item added to library")
-  }
+    toast.success("Item added to library");
+  };
 
-  const removeFromCart = () =>{
+  const removeFromCart = () => {
     dispatch(remove(book.id));
-    toast.error("Item removed from library")
-  }
+    toast.error("Item removed from library");
+  };
 
-  return (<div>
-    <div className="bookcontainer">
-      <div>
-      <p className="booktitle">
-         Title: {book.title}
-        </p>
-      </div>
-      <div>
-        <p className="">
-         Author: {
-            book.author
-          }
-        </p>
-      </div>
-       <div className="book-img">
-        <img style={{height:"100%",width:"100%"}} src="src\assets\iStock-506432952.jpg"/>
-      </div>
-
-      <div className="book-footer">
-         <div style={{width:"100%",height:"100%",display:"flex",justifyContent:"space-between"}}>
-         <p className="book-country">
-           Country: {book.country}
-          </p>
+  return (
+    <div>
+      <div className="bookcontainer">
+        <div>
+          <p className="booktitle">Title: {book.title}</p>
         </div>
-        {
-          library.some((p)=>p.id==book.id)?
-          (<button
-         className="book-remove-button"
-          onClick={removeFromCart}>
-            Remove Item
-          </button>):
-          (<button
-          className="book-add-library"
-          onClick={addToCart}>
-            Add to Cart
-          </button>)
-        }
-      
-      </div>
+        <div>
+          <p className="">Author: {book.author}</p>
+        </div>
+        <div className="book-img">
+          <img
+            style={{ height: "100%", width: "100%" }}
+            src="src\assets\iStock-506432952.jpg"
+          />
+        </div>
 
+        <div className="book-footer">
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <p className="book-country">Country: {book.country}</p>
+          </div>
+          {library.some((p) => p.id == book.id) ? (
+            <button className="book-remove-button" onClick={removeFromCart}>
+              Remove book
+            </button>
+          ) : (
+            <button className="book-add-library" onClick={addToCart}>
+              Add to library
+            </button>
+          )}
+        </div>
+      </div>
     </div>
-  </div>);
+  );
 };
 
 export default Book;

@@ -6,7 +6,7 @@ import AutoStoriesOutlinedIcon from "@mui/icons-material/AutoStoriesOutlined";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Modal from "../Components/CustomModal";
-import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 const ScreenOne = () => {
   const API_URL = " http://64.227.142.191:8080/application-test-v1.1/books";
 
@@ -17,7 +17,6 @@ const ScreenOne = () => {
   const [loading, setLoading] = useState(false);
   const { library } = useSelector((state) => state);
   const [modal, setModal] = useState(false);
-
 
   async function fetchProductData(url, search) {
     setLoading(true);
@@ -45,7 +44,7 @@ const ScreenOne = () => {
   }
 
   useEffect(() => {
-    takeInput()
+    takeInput();
     fetchProductData(API_URL);
   }, []);
   useEffect(() => {
@@ -76,7 +75,6 @@ const ScreenOne = () => {
     fetchProductData(API_SEARCH_URL, "search");
   }
 
-  
   function delayText(index, nextWord, txt) {
     setTimeout(function () {
       if (index === 0) {
@@ -113,12 +111,10 @@ const ScreenOne = () => {
       const nextWord = response[j];
       delayText(j, nextWord, txt);
     }
-
   }
 
   useEffect(() => {
     if (textStart?.length === textStarting.length) {
-
       coursetxt();
       console.log("hello");
     }
@@ -207,24 +203,20 @@ const ScreenOne = () => {
       </div>
 
       <div className="book-parent-container ">
-      <div style={{display:"flex",justifyContent:"center"}} className="bookcontainer">
-
-
-       <div onClick={()=>setModal(true)}  className="book-img">
-        <AddCircleOutlineOutlinedIcon style={{width:"100%",height:"100%", color:"#1e81b0"}}/>
-      </div>
-      <h2>ADD NEW BOOK</h2>
-
-
-
-      
-    </div>
+        <div
+          style={{ display: "flex", justifyContent: "center" }}
+          className="bookcontainer"
+        >
+          <div onClick={() => setModal(true)} className="book-img">
+            <AddCircleOutlineOutlinedIcon
+              style={{ width: "100%", height: "100%", color: "#1e81b0" }}
+            />
+          </div>
+          <h2>ADD NEW BOOK</h2>
+        </div>
         {loading ? (
           <div>wait please</div>
-
-        ) : books.length > 0 ? 
-        
-        (
+        ) : books.length > 0 ? (
           books.map((book) => <Book key={book.id} book={book} />)
         ) : (
           <div>No Data Found</div>

@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import toast from "react-hot-toast";
 const CustomModal = ({ text,API_URL ,book,setModal,add,method,open,setUpdatedBook,}) => {
-const [data ,setData]=useState();
+const [data ,setData]=useState(book);
 
 console.log(add)
  async function apiCall(){
@@ -17,6 +17,8 @@ console.log(add)
         body: JSON.stringify(data),
       });
       console.log(response)
+      console.log(data.length)
+
       if (!response.ok){
         toast.error("Bad Request")
       }
@@ -40,10 +42,10 @@ console.log(add)
   }
 
   function updateField(field, value) {
-    const newValue = value?value:book.field
+
     setData((prevData) => ({
       ...prevData, 
-      [field]:add ?value: newValue, 
+      [field]:value, 
     }));
   }
 
@@ -80,6 +82,7 @@ console.log(add)
               label="title..."
               multiline
               maxRows={4}
+              value={data.title}
               variant="standard"
               sx={{
                 width:"80%",
@@ -96,6 +99,7 @@ console.log(add)
               id="standard-multiline-flexible"
               label="author..."
               multiline
+              value={data.author}
               maxRows={4}
               variant="standard"
               sx={{
@@ -112,6 +116,7 @@ console.log(add)
               id="standard-multiline-flexible"
               label="year..."
               multiline
+              value={data.year}
               maxRows={4}
               variant="standard"
               sx={{
@@ -128,6 +133,7 @@ console.log(add)
               id="standard-multiline-flexible"
               label="country..."
               multiline
+              value={data.country}
               maxRows={4}
               variant="standard"
               sx={{
@@ -144,6 +150,7 @@ console.log(add)
               id="standard-multiline-flexible"
               label="language..."
               multiline
+              value={data.language}
               maxRows={4}
               variant="standard"
               sx={{
@@ -161,6 +168,7 @@ console.log(add)
               id="standard-multiline-flexible"
               label="link..."
               multiline
+              value={data.link}
               maxRows={4}
               variant="standard"
               sx={{
@@ -178,6 +186,7 @@ console.log(add)
               id="standard-multiline-flexible"
               label="pages..."
               multiline
+              value={data.pages}
               maxRows={4}
               variant="standard"
               sx={{
