@@ -134,7 +134,7 @@ const ScreenOne = () => {
           marginTop: "10px",
         }}
       >
-        <h1 className="name">Data Weaver</h1>
+        <h1 className="name">DataWeaver</h1>
         <NavLink to="library">
           <div className="relative text-2xl">
             <AutoStoriesOutlinedIcon sx={{ fontSize: 45, color: "black" }} />
